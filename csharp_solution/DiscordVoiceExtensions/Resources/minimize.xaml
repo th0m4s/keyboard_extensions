@@ -1,0 +1,10 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <DrawingGroup x:Key="minimizeDrawingGroup" ClipGeometry="M0,0 V12 H12 V0 H0 Z">
+        <GeometryDrawing Brush="#b9bbbe">
+      <GeometryDrawing.Geometry>
+        <RectangleGeometry RadiusX="0" RadiusY="0" Rect="1,6,10,1" />
+      </GeometryDrawing.Geometry>
+    </GeometryDrawing>
+  </DrawingGroup>
+  <DrawingImage x:Key="minimizeDrawingImage" Drawing="{StaticResource minimizeDrawingGroup}" />
+</ResourceDictionary>
