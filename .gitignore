@@ -1,6 +1,7 @@
 # Manual defined rules
 # ====================
 .vscode
+Secrets.cs
 
 
 # Below automatic rules from Visual Studio

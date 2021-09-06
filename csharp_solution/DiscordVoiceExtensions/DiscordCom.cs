@@ -21,9 +21,6 @@ namespace KeyboardExtensions
         private static readonly HttpClient httpClient = new HttpClient();
         private string API_ENDPOINT = "https://discord.com/api";
 
-        private const string CLIENT_ID = "YOUR_CLIENT_ID";
-        private const string CLIENT_SECRET = "YOUR_CLIENT_SECRET";
-
         private ConnStatus _currentStatus = ConnStatus.Disconnected;
         public ConnStatus CurrentStatus
         {
@@ -78,7 +75,7 @@ namespace KeyboardExtensions
             for(int i = 6463; i <= 6472; i++)
             {
                 Console.WriteLine("Trying Discord port " + i);
-                client = new WebsocketClient(new Uri("ws://127.0.0.1:" + i + "/?client_id=" + CLIENT_ID));
+                client = new WebsocketClient(new Uri("ws://127.0.0.1:" + i + "/?client_id=" + Secrets.DISCORD_CLIENT_ID));
 
                 try
                 {
@@ -153,7 +150,7 @@ namespace KeyboardExtensions
 
                         var refreshData = new Dictionary<string, string>
                         {
-                            {"client_id", CLIENT_ID}, {"client_secret", CLIENT_SECRET}, {"grant_type", "refresh_token"}, {"refresh_token", refreshToken}
+                            {"client_id", Secrets.DISCORD_CLIENT_ID}, {"client_secret", Secrets.DISCORD_CLIENT_SECRET}, {"grant_type", "refresh_token"}, {"refresh_token", refreshToken}
                         };
 
                         JObject tokenResponse = JSONDecoder.Decode(PostRequest(API_ENDPOINT + "/oauth2/token", new FormUrlEncodedContent(refreshData)));

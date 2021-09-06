@@ -64,6 +64,8 @@
     <Compile Include="DiscordSettings.xaml.cs">
       <DependentUpon>DiscordSettings.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Secrets.cs" />
+    <Compile Include="SecretsTemplate.cs" />
     <Compile Include="SimpleJSON\JObject.cs" />
     <Compile Include="SimpleJSON\JSONDecoder.cs" />
     <Compile Include="SimpleJSON\JSONEncoder.cs" />
